@@ -207,17 +207,21 @@ namespace KittyBoxRandomizer
                 round++;
             }
 
-            StreamWriter swLosers = new StreamWriter(String.Format("{0}/losers.txt", rootFolder));
-
-            foreach(string ticket in tickets.Distinct())
+            if (round == 1)
             {
-                swLosers.WriteLine(ticket);
+                StreamWriter swLosers = new StreamWriter(String.Format("{0}/losers.txt", rootFolder));
+
+                foreach (string ticket in tickets.Distinct())
+                {
+                    swLosers.WriteLine(ticket);
+                }
+
+                swLosers.Close();
             }
 
             swLogs.WriteLine("End Time: {0}", DateTime.Now);
             swLogs.Close();
             swResults.Close();
-            swLosers.Close();
 
             MessageBox.Show("Draw is complete");
         }

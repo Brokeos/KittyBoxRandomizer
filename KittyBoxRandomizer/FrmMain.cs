@@ -51,7 +51,7 @@ namespace KittyBoxRandomizer
         {
             try
             {
-                //listGifts.Items.Clear();
+                listGifts.Items.Clear();
 
                 OpenFileDialog ofd = new OpenFileDialog();
 
